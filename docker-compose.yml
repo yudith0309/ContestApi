@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+    web:
+        container_name: apiconcurso    #Name Container
+        restart: always             #Any problem restart 
+        build: .                    #Buil file 
+        ports: 
+            - "6000:5000"          #Port run app and run container
+        links:
+           - mongo        
+    mongo:
+        container_name: mongodatabase   #Name Img Data Base
+        image: mongo                    #Img base
+        ports:
+            - "27018:27017"
